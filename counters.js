@@ -1,88 +1,11 @@
 
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, TouchableOpacity, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import 'react-native-gesture-handler';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
 
-  playerOne: {
-    flex: 1,
-    backgroundColor : "red",
-    alignItems: "center",
-    justifyContent: 'center',
-    height: 50,
-  },
-  
-  playerTwo: {
-    flex: 1,
-    backgroundColor : "orange",
-    alignItems: "center",
-    justifyContent: 'center',
-    height: 50,
-  },
-
-  playerThree: {
-    flex: 1,
-    backgroundColor : "purple",
-    alignItems: "center",
-    justifyContent: 'center',
-    height: 50,
-  },
-
-  playerFour: {
-    flex: 1,
-    backgroundColor : "green",
-    alignItems: "center",
-    justifyContent: 'center',
-    height: 50,
-  },
-
-  playerFive: {
-    flex: 1,
-    backgroundColor : "blue",
-    alignItems: "center",
-    justifyContent: 'center',
-    height: 50,
-  },
-
-  plusButton: {
-    color: "white",
-    paddingRight: 25,
-    fontSize: 40,
-  },
-
-  minusButton: {
-    color: "white",
-    paddingLeft: 25,
-    fontSize: 40,
-  },
-
-  counter: {
-    color: "white",
-    fontSize: 40,
-  },
-
-  counterContainer: {
-    flexDirection: 'row',
-    alignItems: "center",
-    justifyContent: 'center',
-  },
-
-  playerName: {
-    paddingBottom: 25, 
-  }
-  })
-
-
-export default function App() {
-
-
-  // ---- DEBUT DES CONST ----
-
+const playerCounters = () => {
 
     const [counterPlayerOne, setCounterPlayerOne] = useState(0);
     const [initialCountPlayerOne, setInitialCounterPlayerOne] = useState(0);
@@ -113,11 +36,11 @@ export default function App() {
       setCommanderCounterPlayerOne(commanderCounterPlayerOne -1),Z
       setCounterPlayerOne(counterPlayerOne -1);
     };
- 
+  }
   
   // ---- DEBUT P2 COMPTEUR ----
   
-  
+  const playerTwoCounter = () => {
   
     const [counterPlayerTwo, setCounterPlayerTwo] = useState(0);
     const [initialCountPlayerTwo, setInitialCounterPlayerTwo] = useState(0);
@@ -148,11 +71,11 @@ export default function App() {
       setCommanderCounterPlayerTwo(commanderCounterPlayerTwo -1),Z
       setCounterPlayerTwo(counterPlayerTwo -1);
     };
-  
+  }
   
   // ---- DEBUT P3 COMPTEUR ----
   
-
+  const playerThreeCounter = () => {
   
     const [counterPlayerThree, setCounterPlayerThree] = useState(0);
     const [initialCountPlayerThree, setInitialCounterPlayerThree] = useState(0);
@@ -183,11 +106,11 @@ export default function App() {
       setCommanderCounterPlayerThree(commanderCounterPlayerThree -1),Z
       setCounterPlayerThree(counterPlayerThree -1);
     };
- 
+  }
   
   // ---- DEBUT P4 COMPTEUR ----
   
-
+  const playerFourCounter = () => {
   
     const [counterPlayerFour, setCounterPlayerFour] = useState(0);
     const [initialCountPlayerFour, setInitialCounterPlayerFour] = useState(0);
@@ -218,11 +141,11 @@ export default function App() {
       setCommanderCounterPlayerFour(commanderCounterPlayerFour -1),Z
       setCounterPlayerFour(counterPlayerFour -1);
     };
-
+  }
   
   // ---- DEBUT P5 COMPTEUR ----
   
-
+  const playerFiveCounter = () => {
   
     const [counterPlayerFive, setCounterPlayerFive] = useState(0);
     const [initialCountPlayerFive, setInitialCounterPlayerFive] = useState(0);
@@ -253,56 +176,6 @@ export default function App() {
       setCommanderCounterPlayerFive(commanderCounterPlayerFive -1),Z
       setCounterPlayerFive(counterPlayerFive -1);
     };
-
-    // ---- DEBUT DES CONST NOMS DE JOUEUR ----
-
-    const [playerOneName, setPlayerOneName] = useState("Player 1");
-    const handleClickPlayerOneName = (value) => {
-      setPlayerOneName(String(value));
-    }
-    const [playerTwoName, setPlayerTwoName] = useState("Player 2");
-
-    const [playerThreeName, setPlayerThreeName] = useState("Player 3");
-
-    const [playerFourName, setPlayerFourName] = useState("Player 4");
-
-    const [playerFiveName, setPlayerFiveName] = useState("Player 5");
-
-  // ---- FIN DES CONST ----
-  return (
-    <View style={styles.container}>
-      <View style={styles.playerOne}>
-        <View>
-          <TouchableOpacity><TextInput style={styles.playerName} onChangeText={handleClickPlayerOneName}>{playerOneName}</TextInput></TouchableOpacity>
-        </View>
-        <View style={styles.counterContainer}>
-          <TouchableOpacity onPress={handleClickPlayerOneUp}><Text style={styles.plusButton}>+</Text></TouchableOpacity>
-          <Text style={styles.counter}>{counterPlayerOne}</Text>
-          <TouchableOpacity onPress={handleClickPlayerOneDown}><Text style={styles.minusButton}>-</Text></TouchableOpacity>
-        </View>
-      </View>
-
-
-      <View style={styles.playerTwo}>
-
-        <Text>Player 2</Text>
-
-      </View>
-      <View style={styles.playerThree}>
-
-        <Text>Player 3</Text>
-
-      </View>
-      <View style={styles.playerFour}>
-
-        <Text>Player 4</Text>
-
-      </View>
-      <View style={styles.playerFive}>
-
-          <Text> Player 5</Text>
-
-      </View>
-    </View>
-  );
-}
+  } 
+  
+  export default playerCounters;
